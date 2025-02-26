@@ -3,15 +3,24 @@ import Features from "./components/Features"
 import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
 import HeroSection from "./components/HeroSection"
+import Login from "./components/Login"
+import { useState } from "react"
+import Register from "./components/Register"
+import TestimonialCarousel from "./components/TestimonialCarousel"
 
 function App() {
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+  const [isRegisterOpen, setIsRegisterOpen] = useState(false);
 
   return (
     <>
-      <Navbar />
+      <Navbar setIsLoginOpen={setIsLoginOpen} setIsRegisterOpen={setIsRegisterOpen} />
       <HeroSection />
       <Features />
+      <TestimonialCarousel />
       <Footer />
+      <Login isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
+      <Register isOpen={isRegisterOpen} onClose={() => setIsRegisterOpen(false)} />
     </>
   )
 }
