@@ -3,20 +3,20 @@ import { FaBookOpen, FaFacebook, FaGoogle, FaInstagram, FaLinkedin } from "react
 
 function Footer() {
     return (
-        <div className="footer-container bg-gray-200 dark:bg-gray-900 text-black dark:text-gray-300 flex flex-col w-full py-6"  >
-            <div className="footer-content w-full max-w-[900px] mx-auto">
+        <div className="footer-container bg-gray-200 dark:bg-gray-900 text-black dark:text-gray-300 flex flex-col w-full py-6 transition-colors duration-300"  >
+            <div className="footer-content w-full max-w-[1000px] mx-auto">
                 <div className="footer-top flex flex-col justify-center sm:flex-row gap-6">
                     <div className="footer-top-left flex flex-col items-center text-center sm:text-left">
                         <a href="#" className="logo flex items-center gap-2">
                             <FaBookOpen className="text-2xl" />
                             <span className="text-xl font-semibold">StudyBuddy</span>
                         </a>
-                        <p className="mt-2 text-sm">Seamless Learning for a Brighter Future</p>
+                        <p className="mt-2 text-sm text-center">Seamless Learning for a Brighter Future</p>
                         <div className="social-media flex gap-3 mt-3">
-                            <a href="#" className="text-xl hover:text-gray-400"><FaInstagram /></a>
-                            <a href="#" className="text-xl hover:text-gray-400"><FaFacebook /></a>
-                            <a href="#" className="text-xl hover:text-gray-400"><FaLinkedin /></a>
-                            <a href="#" className="text-xl hover:text-gray-400"><FaGoogle /></a>
+                            <a href="https://www.instagram.com" target="_blank" className="text-xl hover:text-gray-400"><FaInstagram /></a>
+                            <a href="https://www.facebook.com" target="_blank" className="text-xl hover:text-gray-400"><FaFacebook /></a>
+                            <a href="https://www.linkedin.com" target="_blank" className="text-xl hover:text-gray-400"><FaLinkedin /></a>
+                            <a href="https://www.google.com" target="_blank" className="text-xl hover:text-gray-400"><FaGoogle /></a>
                         </div>
                     </div>
                     <div className="footer-top-right grid grid-cols-2 sm:grid-cols-4 gap-4">

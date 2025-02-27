@@ -28,7 +28,7 @@ const testimonials = [
 
 function TestimonialCarousel() {
     return (
-        <div className="bg-gray-100 dark:bg-gray-800 ">
+        <div className="bg-gray-100 dark:bg-gray-800 transition-colors duration-300 ">
             <div className="max-w-4xl mx-auto py-10 px-4">
                 <h2 className="text-3xl font-bold text-center mb-4 text-gray-900 dark:text-white">
                     What Our Users Say

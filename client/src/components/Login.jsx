@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Login({ isOpen, onClose }) {
     if (!isOpen) return null;
 
+    const [formData, setFormData] = useState({ email: "", password: "" })
+
+    const handleForm = (e) => {
+        setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }))
+    }
+
+    const formSubmit = (e) => {
+        e.prevantDefault
+        console.log("form submitted");
+    }
+
     return (
         <div className="fixed inset-0 px-10 flex items-center justify-center bg-black/50">
-            <div className="bg-white relative bg- dark:bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-md animate-fadeIn">
+            <div className="bg-white relative bg- dark:bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-md animate-fadeIn transition-colors duration-300">
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white text-center">
                     Login to Your Account
                 </h2>
@@ -16,6 +27,9 @@ function Login({ isOpen, onClose }) {
                         </label>
                         <input
                             type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleForm}
                             className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
                             placeholder="Enter your email"
                         />
@@ -26,19 +40,23 @@ function Login({ isOpen, onClose }) {
                         </label>
                         <input
                             type="password"
+                            name="password"
+                            value={formData.password}
+                            onChange={handleForm}
                             className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
                             placeholder="Enter your password"
                         />
                     </div>
                     <button
                         type="submit"
+                        onClick={formSubmit}
                         className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 rounded-md transition"
                     >
                         Login
                     </button>
                     <p className="text-center text-gray-600 dark:text-gray-400 mt-2">
                         Don't have an account?{" "}
-                        <a href="#" className="text-blue-500 hover:underline">
+                        <a href="" className="text-blue-500 hover:underline">
                             Register
                         </a>
                     </p>

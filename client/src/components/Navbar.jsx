@@ -3,8 +3,8 @@ import Theme from "./Theme";
 
 function Navbar({ setIsLoginOpen, setIsRegisterOpen }) {
     return (
-        <div className="sticky top-0 w-full bg-gray-200 dark:bg-gray-900 shadow-md dark:shadow-lg">
-            <div className=" flex justify-between px-4 mx-auto w-full max-w-[900px] py-3 ">
+        <div className="sticky top-0  z-10 w-full bg-gray-200 dark:bg-gray-900 shadow-md dark:shadow-lg transition-colors duration-300">
+            <div className=" flex justify-between px-6 mx-auto w-full py-3 ">
                 <h1 className="text-gray-900 dark:text-white font-bold text-xl">StudyBuddy</h1>
                 <div className="buttons flex gap-3">
                     <Theme />

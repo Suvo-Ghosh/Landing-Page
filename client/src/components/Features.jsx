@@ -47,13 +47,13 @@ function Features() {
     ];
 
     return (
-        <div className="py-10 bg-gray-100 dark:bg-gray-800">
+        <div className="py-10 bg-gray-100 dark:bg-gray-800 transition-colors duration-300">
             <h1 className="text-center font-bold text-2xl  text-gray-900 dark:text-gray-300">Our Competitive Advantage</h1>
             <p className="text-center mt-2 text-sm sm:text-base max-w-2xl mx-auto  text-gray-900 dark:text-gray-300">
                 We provide cutting-edge learning solutions tailored to individual needs, ensuring a top-tier educational experience for all learners.
             </p>
             <div className="w-full mt-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 px-4 max-w-3xl place-items-center mx-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 px-4 max-w-[1000px] place-items-center mx-auto">
                     {FeaturesData.map((item, index) => (
                         <Feature key={index} item={item} />
                     ))}

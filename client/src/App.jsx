@@ -7,6 +7,7 @@ import Login from "./components/Login"
 import { useState } from "react"
 import Register from "./components/Register"
 import TestimonialCarousel from "./components/TestimonialCarousel"
+import Courses from "./components/Courses"
 
 function App() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
@@ -16,6 +17,7 @@ function App() {
     <>
       <Navbar setIsLoginOpen={setIsLoginOpen} setIsRegisterOpen={setIsRegisterOpen} />
       <HeroSection />
+      <Courses />
       <Features />
       <TestimonialCarousel />
       <Footer />
