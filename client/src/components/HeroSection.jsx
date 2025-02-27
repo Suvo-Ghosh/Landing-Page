@@ -3,9 +3,9 @@ import React from "react";
 function HeroSection() {
     return (
         <div className="w-full px-2 bg-gray-100 dark:bg-gray-800 transition-colors duration-300  ">
-            <div className="w-full max-w-[1000px] mx-auto flex flex-col md:flex-row gap-2 animate-SlideFromLeft">
+            <div className="w-full max-w-[1000px] mx-auto flex flex-col md:flex-row gap-2 ">
                 {/* Left Content */}
-                <div className="w-full text-center md:text-left animate-slideLeft">
+                <div className="w-full text-center md:text-left animate-SlideFromLeft">
                     <p className="text-blue-600 dark:text-blue-400 font-medium text-lg mt-3 sm:mt-10">Very proud to introduce</p>
                     <h1 className="my-4 text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100">
                         Seamless Learning for Better Future

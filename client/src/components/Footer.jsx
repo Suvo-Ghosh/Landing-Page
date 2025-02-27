@@ -9,7 +9,7 @@ function Footer() {
                     <div className="footer-top-left flex flex-col items-center text-center sm:text-left">
                         <a href="#" className="logo flex items-center gap-2">
                             <FaBookOpen className="text-2xl" />
-                            <span className="text-xl font-semibold">StudyBuddy</span>
+                            <span className="text-xl font-semibold">Learnity</span>
                         </a>
                         <p className="mt-2 text-sm text-center">Seamless Learning for a Brighter Future</p>
                         <div className="social-media flex gap-3 mt-3">
@@ -51,7 +51,7 @@ function Footer() {
                     </div>
                 </div>
                 <div className="footer-bottom mt-6 text-center text-sm border-t border-gray-600 pt-4">
-                    <p>© 2025 StudyBuddy. All rights reserved.</p>
+                    <p>© 2025 Learnity. All rights reserved.</p>
                 </div>
             </div>
         </div>

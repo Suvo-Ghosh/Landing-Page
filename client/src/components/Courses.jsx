@@ -8,7 +8,7 @@ const coursesData = [
         price: 49.99,
         rating: 4.5,
         students: "12,345",
-        image: "https://ik.imagekit.io/laxaar/1686313855890ReactJS_2400x1200.png", // React-related image
+        image: "https://tse3.mm.bing.net/th?id=OIP.x0d41ns8PTQZz4a3VbMrBgHaEK&pid=Api&P=0&h=180", // React-related image
         category: "Web Development"
     },
     {
