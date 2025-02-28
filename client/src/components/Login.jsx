@@ -1,17 +1,47 @@
 import React, { useState } from "react";
+import axios from 'axios'
 
-function Login({ isOpen, onClose }) {
+function Login({ isOpen, setLoggedIn, setIsLoginOpen, setUser }) {
     if (!isOpen) return null;
 
     const [formData, setFormData] = useState({ email: "", password: "" })
+    const [error, setError] = useState({})
+    const [success, setSuccess] = useState()
 
     const handleForm = (e) => {
         setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }))
     }
 
-    const formSubmit = (e) => {
-        e.prevantDefault
-        console.log("form submitted");
+    const formSubmit = async (e) => {
+        e.preventDefault()
+        let err = {}
+
+        let regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!regex.test(formData.email)) {
+            err.email = "Invalid email"
+        }
+
+        if (formData.password.length < 6) {
+            err.password = "Password must be 6 char"
+        }
+
+        if (Object.keys(err).length > 0) {
+            setError(err)
+            return
+        }
+
+        try {
+            const response = await axios.post("http://localhost:4000/user/login", formData);
+            setSuccess(response.data.message);
+            setUser(response.data.user)
+            setFormData({ email: "", password: "" });
+            setLoggedIn(true)
+            setIsLoginOpen(false)
+
+        } catch (err) {
+            console.log(err);
+            setError({ server: err.response?.data?.error || "Something went wrong" });
+        }
     }
 
     return (
@@ -20,6 +50,8 @@ function Login({ isOpen, onClose }) {
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white text-center">
                     Login to Your Account
                 </h2>
+                {success && <p className="text-green-600 text-center">{success}</p>}
+                {error.server && <p className="text-red-600 text-center">{error.server}</p>}
                 <form className="mt-4">
                     <div className="mb-4">
                         <label className="block text-gray-700 dark:text-gray-300 mb-1">
@@ -34,7 +66,8 @@ function Login({ isOpen, onClose }) {
                             placeholder="Enter your email"
                         />
                     </div>
-                    <div className="mb-4">
+                    {error.email && <p className="text-red-600"> {error.email}</p>}
+                    <div className="mb-2">
                         <label className="block text-gray-700 dark:text-gray-300 mb-1">
                             Password:
                         </label>
@@ -47,6 +80,7 @@ function Login({ isOpen, onClose }) {
                             placeholder="Enter your password"
                         />
                     </div>
+                    {error.password && <p className="text-red-600"> {error.password}</p>}
                     <button
                         type="submit"
                         onClick={formSubmit}
@@ -62,7 +96,7 @@ function Login({ isOpen, onClose }) {
                     </p>
                 </form>
                 <button
-                    onClick={onClose}
+                    onClick={() => setIsLoginOpen(false)}
                     className="absolute cursor-pointer top-3 right-4 text-xl text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
                 >
                     ✕

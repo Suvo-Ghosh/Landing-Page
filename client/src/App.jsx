@@ -12,17 +12,19 @@ import Courses from "./components/Courses"
 function App() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false)
+  const [user, setUser] = useState()
 
   return (
     <>
-      <Navbar setIsLoginOpen={setIsLoginOpen} setIsRegisterOpen={setIsRegisterOpen} />
+      <Navbar setIsLoginOpen={setIsLoginOpen} setIsRegisterOpen={setIsRegisterOpen} loggedIn={loggedIn} user={user} />
       <HeroSection />
       <Courses />
       <Features />
       <TestimonialCarousel />
       <Footer />
-      <Login isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
-      <Register isOpen={isRegisterOpen} onClose={() => setIsRegisterOpen(false)} />
+      <Login isOpen={isLoginOpen} setIsLoginOpen={setIsLoginOpen} setLoggedIn={setLoggedIn} setUser={setUser} />
+      <Register isOpen={isRegisterOpen} setIsRegisterOpen={setIsRegisterOpen} setIsLoginOpen={setIsLoginOpen} />
     </>
   )
 }
