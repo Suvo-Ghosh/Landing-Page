@@ -8,6 +8,7 @@ import { useState } from "react"
 import Register from "./components/Register"
 import TestimonialCarousel from "./components/TestimonialCarousel"
 import Courses from "./components/Courses"
+import { Toaster } from 'react-hot-toast'
 
 function App() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
@@ -17,6 +18,7 @@ function App() {
 
   return (
     <>
+      <Toaster position="top-right" />
       <Navbar setIsLoginOpen={setIsLoginOpen} setIsRegisterOpen={setIsRegisterOpen} loggedIn={loggedIn} user={user} />
       <HeroSection />
       <Courses />

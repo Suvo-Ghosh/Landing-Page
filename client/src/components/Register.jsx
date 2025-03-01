@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from 'axios'
+import toast from "react-hot-toast";
 
 
 function Register({ isOpen, setIsRegisterOpen, setIsLoginOpen }) {
@@ -35,9 +36,10 @@ function Register({ isOpen, setIsRegisterOpen, setIsLoginOpen }) {
         }
 
         try {
-            const response = await axios.post("http://localhost:4000/user/register", formData);
+            const response = await axios.post(`${import.meta.env.VITE_API_URL}/user/register`, formData);
             setSuccess(response.data.message);
             setFormData({ name: "", email: "", password: "" });
+            toast.success("Registration successful")
             setIsRegisterOpen(false)
             setIsLoginOpen(true)
         } catch (err) {

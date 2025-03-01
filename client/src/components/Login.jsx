@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from 'axios'
+import toast from "react-hot-toast";
 
 function Login({ isOpen, setLoggedIn, setIsLoginOpen, setUser }) {
     if (!isOpen) return null;
@@ -31,10 +32,11 @@ function Login({ isOpen, setLoggedIn, setIsLoginOpen, setUser }) {
         }
 
         try {
-            const response = await axios.post("http://localhost:4000/user/login", formData);
+            const response = await axios.post(`${import.meta.env.VITE_API_URL}/user/login`, formData);
             setSuccess(response.data.message);
             setUser(response.data.user)
             setFormData({ email: "", password: "" });
+            toast.success("Login successful")
             setLoggedIn(true)
             setIsLoginOpen(false)
 
