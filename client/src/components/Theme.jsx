@@ -4,7 +4,11 @@ function Theme() {
     const [theme, setTheme] = useState("light")
 
     useEffect(() => {
-        document.documentElement.classList.toggle("dark");
+        if (theme === "dark") {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
     }, [theme])
     return (
         <div className='cursor-pointer'>
