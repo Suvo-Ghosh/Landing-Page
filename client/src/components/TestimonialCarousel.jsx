@@ -35,7 +35,7 @@ function TestimonialCarousel() {
                 </h2>
                 <Swiper
                     modules={[Navigation, Pagination, Autoplay]}
-                    navigation
+                    // navigation
                     pagination={{ clickable: true }}
                     autoplay={{ delay: 4000 }}
                     loop
@@ -47,7 +47,7 @@ function TestimonialCarousel() {
                                 src={testimonial.image}
                                 alt={testimonial.name}
                                 loading="lazy"
-                                className="w-16 h-16 rounded-full mb-4 border-2 mx-auto border-blue-500"
+                                className="w-20 h-20 rounded-full mb-4 border-2 mx-auto border-blue-500"
                             />
                             <p className="text-gray-700 dark:text-gray-300 italic mb-4">
                                 "{testimonial.text}"
