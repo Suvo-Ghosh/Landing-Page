@@ -9,6 +9,7 @@ import Register from "./components/Register"
 import TestimonialCarousel from "./components/TestimonialCarousel"
 import Courses from "./components/Courses"
 import { Toaster } from 'react-hot-toast'
+import ScrollingTopics from "./components/ScrollingTopics"
 
 function App() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
@@ -22,6 +23,7 @@ function App() {
       <Navbar setIsLoginOpen={setIsLoginOpen} setIsRegisterOpen={setIsRegisterOpen} loggedIn={loggedIn} user={user} />
       <HeroSection />
       <Courses />
+      <ScrollingTopics />
       <Features />
       <TestimonialCarousel />
       <Footer />

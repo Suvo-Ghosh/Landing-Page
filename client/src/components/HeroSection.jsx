@@ -16,10 +16,10 @@ function HeroSection() {
                         transformative journey to simplify education and unlock your full potential.
                     </p>
                     <div className="mt-6 mb-4 flex justify-center md:justify-start gap-3">
-                        <button className="px-5 py-2 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-semibold rounded shadow-md">
+                        <button className="cursor-pointer px-5 py-2 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-semibold rounded shadow-md">
                             Start Now
                         </button>
-                        <button className="px-5 py-2 bg-gray-500 hover:bg-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600 text-white font-semibold rounded shadow-md">
+                        <button className="cursor-pointer px-5 py-2 bg-gray-500 hover:bg-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600 text-white font-semibold rounded shadow-md">
                             Take Tour
                         </button>
                     </div>
